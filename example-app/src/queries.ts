@@ -1,21 +1,14 @@
 import { gql } from "@apollo/client";
 
-export const UserFragment = gql`
-  fragment UserFields on User {
-    id
-    username
-    email
-    role
-  }
-`;
-
 export const GetUserQuery = gql`
   query GetUser {
     me {
-      ...UserFields
+      id
+      username
+      email
+      role
     }
   }
-  ${UserFragment}
 `;
 
 export const ChatQuery = gql`
@@ -23,9 +16,11 @@ export const ChatQuery = gql`
     myChats {
       id
       users {
-        ...UserFields
+        id
+        username
+        email
+        role
       }
     }
   }
-  ${UserFragment}
 `;

@@ -1,8 +1,5 @@
-import * as React from "react";
-import { getUserQuery, User } from "../generated";
-
 function UserProfile() {
-  return <div></div>;
+  return <div>A user profile</div>;
 }
 
 export default UserProfile;
